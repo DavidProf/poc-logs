@@ -1,0 +1,17 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "api.js",
+    "scripts": {
+        "start": "node api.js"
+    },
+    "type": "module",
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.3",
+        "pino": "^7.8.0",
+        "node-fetch": "^3.2.2"
+    }
+}

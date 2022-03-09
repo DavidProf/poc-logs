@@ -1,0 +1,16 @@
+{
+    "name": "process",
+    "version": "1.0.0",
+    "description": "",
+    "main": "process.js",
+    "scripts": {
+        "start": "node process.js"
+    },
+    "type": "module",
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.3",
+        "node-fetch": "^3.2.2"
+    }
+}

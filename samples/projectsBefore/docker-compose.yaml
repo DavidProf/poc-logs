@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+    api:
+        container_name: api
+        build:
+            context: ./api
+            dockerfile: ../Dockerfile
+        environment:
+            - PORT=80
+            - BLACKLIST_URI=http://blacklist
+            - TELEPHONE_DIRECTORY_URI=http://telephoneDirectory
+            - PROCESS_URI=http://process
+        ports:
+            - 3141:80
+        networks:
+            - poc-logs
+        logging:
+            driver: fluentd
+    blacklist:
+        container_name: blacklist
+        build:
+            context: ./blacklist
+            dockerfile: ../Dockerfile
+        environment:
+            - PORT=80
+        networks:
+            - poc-logs
+        logging:
+            driver: fluentd
+    telephone-directory:
+        container_name: telephoneDirectory
+        build:
+            context: ./telephoneDirectory
+            dockerfile: ../Dockerfile
+        environment:
+            - PORT=80
+        networks:
+            - poc-logs
+        logging:
+            driver: fluentd
+    process:
+        container_name: process
+        build:
+            context: ./process
+            dockerfile: ../Dockerfile
+        environment:
+            - PORT=80
+            - CSV_WRITER_URI=http://csvWriter
+        networks:
+            - poc-logs
+        logging:
+            driver: fluentd
+    csv-writer:
+        container_name: csvWriter
+        build:
+            context: ./csvWriter
+            dockerfile: ../Dockerfile
+        environment:
+            - PORT=80
+        networks:
+            - poc-logs
+        volumes:
+            - ../csv:/csv
+        logging:
+            driver: fluentd
+
+networks:
+    poc-logs:
+        # Use a custom driver
+        driver: bridge
+        name: poc-logs

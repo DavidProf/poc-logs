@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  fluent:
+    build:
+        context: .
+        dockerfile: fluent.Dockerfile
+    volumes:
+        - ../logs:/logs
+    environment:
+        - SEPARATOR=bpd # will be added to each logs, you can use this to test and filter distinct tests
+    env_file:
+        - ../../.env
+    ports:
+        - 24224:24224

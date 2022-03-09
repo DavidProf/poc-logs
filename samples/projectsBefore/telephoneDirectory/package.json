@@ -1,0 +1,15 @@
+{
+  "name": "telephone-directory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "telephoneDirectory.js",
+  "scripts": {
+    "start": "node telephoneDirectory.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+      "express": "^4.17.3"
+  }
+}

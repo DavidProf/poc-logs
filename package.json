@@ -1,0 +1,23 @@
+{
+    "name": "poc-logs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "winston": "node samples/libs/winston.js >> samples/logs/winston.log",
+        "winstonNewrelicEnricher": "node samples/libs/winstonNewrelicEnricher.js >> samples/logs/winstonNewrelicEnricher.log",
+        "pino": "node samples/libs/pino.js >> samples/logs/pino.log",
+        "test:libs": "npm run winston && npm run pino && npm run winstonNewrelicEnricher"
+    },
+    "type": "module",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@newrelic/winston-enricher": "^2.1.0",
+        "dotenv": "^16.0.0",
+        "newrelic": "^8.8.0",
+        "pino": "^7.8.0",
+        "winston": "^3.6.0"
+    }
+}

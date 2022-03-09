@@ -1,0 +1,12 @@
+services:
+    template:
+        environment:
+            - PORT=80
+            - BLACKLIST_URI=http://blacklist
+            - TELEPHONE_DIRECTORY_URI=http://telephoneDirectory
+            - PROCESS_URI=http://process
+            - CSV_WRITER_URI=http://csvWriter
+        networks:
+            - poc-logs
+        logging:
+            driver: fluentd

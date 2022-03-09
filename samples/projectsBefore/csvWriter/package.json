@@ -1,0 +1,16 @@
+{
+  "name": "csv-writer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "csvWriter.js",
+  "scripts": {
+    "start": "node csvWriter.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fast-csv/format": "^4.3.5",
+    "express": "^4.17.3"
+  }
+}

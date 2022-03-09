@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+    api:
+        extends:
+            service: template
+            file: template.yaml
+        container_name: api
+        build:
+            context: ./api
+            dockerfile: ../Dockerfile
+        environment:
+            - APP=api
+        ports:
+            - 3141:80
+    blacklist:
+        extends:
+            service: template
+            file: template.yaml
+        container_name: blacklist
+        build:
+            context: ./blacklist
+            dockerfile: ../Dockerfile
+
+    telephone-directory:
+        extends:
+            service: template
+            file: template.yaml
+        container_name: telephoneDirectory
+        build:
+            context: ./telephoneDirectory
+            dockerfile: ../Dockerfile
+    process:
+        extends:
+            service: template
+            file: template.yaml
+        container_name: process
+        build:
+            context: ./process
+            dockerfile: ../Dockerfile
+    csv-writer:
+        extends:
+            service: template
+            file: template.yaml
+        container_name: csvWriter
+        build:
+            context: ./csvWriter
+            dockerfile: ../Dockerfile
+        volumes:
+            - ../csv:/csv
+
+networks:
+    poc-logs:
+        # Use a custom driver
+        driver: bridge
+        name: poc-logs
