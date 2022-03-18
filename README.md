@@ -105,10 +105,10 @@ Possui as seguintes aplicações:
 
 | aplicações          | responsabilidades |
 | ------------------- | ----------------- |
-| api                 | 1,2*,3*           |
-| blacklist           | 1                 |
-| telephone directory | 2                 |
-| process             | 4,5               |
+| api                 | 1, 2*, 3*         |
+| blacklist           | 2                 |
+| telephone directory | 3                 |
+| process             | 4, 5              |
 | csvWriter           | 6                 |
 
 ### Definindo o que queremos obter dos logs
